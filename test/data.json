@@ -1,0 +1,7 @@
+{
+    "cmd_type": "TestRequest",
+    "cmd": {
+        "name": "xxx",
+        "age": "21"
+    }
+}

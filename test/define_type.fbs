@@ -1,0 +1,19 @@
+namespace test.idl;
+
+table TestRequest
+{
+    name: string;
+    age: uint;
+}
+
+union Command
+{
+    TestRequest
+}
+
+table UnionRequest
+{
+    cmd: Command;
+}
+
+root_type UnionRequest;
