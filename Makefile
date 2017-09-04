@@ -4,10 +4,10 @@ SOURCES = $(wildcard *.cpp)
 HEADERS = $(wildcard *.h)
 OBJECTS = $(patsubst %.cpp, %.o, $(SOURCES))
 
-$(TARGET): $(OBJECTS) $(HEADERS)
+$(TARGET): $(OBJECTS)
 	g++ -g -Wall -std=c++11 $^ -o $@ -lflatbuffers
 
-%.o: %.cpp
+%.o: %.cpp $(HEADERS)
 	g++ -g -Wall -std=c++11 -c $< -o $@
 
 .PHONY: clean

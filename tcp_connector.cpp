@@ -5,6 +5,7 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 #include <errno.h>
+#include <unistd.h>
 #include "tcp_connector.h"
 
 TcpConnector::TcpConnector()
@@ -16,7 +17,7 @@ TcpConnector::TcpConnector()
 
 TcpConnector::~TcpConnector()
 {
-
+    close(sockfd_);
 }
 
 int TcpConnector::init(const std::string &ip, int port)
